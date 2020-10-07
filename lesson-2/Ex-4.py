@@ -3,7 +3,7 @@
 # Written by Teterin Roman
 # for GeekBrains Python course
 # Python base
-# Lesson 2 Exercise 2
+# Lesson 2 Exercise 4
 
 my_string = input('Введите несколько слов разделенных пробелами: ')
 worlds = my_string.split(' ')
