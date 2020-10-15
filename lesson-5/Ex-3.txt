@@ -1,0 +1,7 @@
+Smith 30000
+Brown 10000
+Smirnov 50000
+Putin 5000
+Medvedev 3000
+Poroshenko 5000
+Petrov 70000
