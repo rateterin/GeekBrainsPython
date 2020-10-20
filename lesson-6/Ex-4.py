@@ -29,6 +29,8 @@ class Car:
             self.color = kwargs['color']
         if 'name' in kwargs.keys():
             self.name = kwargs['name']
+        if 'is_police' in kwargs.keys():
+            self.is_police = kwargs['is_police']
 
     def go(self):
         print(f'{self.name} is start going.')
@@ -46,31 +48,24 @@ class Car:
             print(f"{self.name} turn to the {('north', 'east', 'south', 'west')[direction]}.")
 
     def show_speed(self):
-        print(self.speed)
+        print(f'Current speed: {self.speed}')
 
 
 class TownCar(Car):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
     def show_speed(self):
         super().show_speed()
-        if self.speed > 60:
+        if self.speed > 60 and not self.is_police:
             print(f'Overspeed!!!\n60 is maximum!')
 
 
 class SportCar(Car):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    pass
 
 
 class WorkCar(Car):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
     def show_speed(self):
         super().show_speed()
-        if self.speed > 40:
+        if self.speed > 40 and not self.is_police:
             print(f'Overspeed!!!\n40 is maximum!')
 
 
@@ -82,7 +77,7 @@ class PoliceCar(Car):
 
 cars = (TownCar(color='white', name='Opel'),
         SportCar(color='red', name='Ferrari'),
-        WorkCar(color='black', name='Ford'),
+        WorkCar(color='black', name='Ford', is_police=True),
         PoliceCar(color='blue', name='Renault'))
 
 for car in cars:
