@@ -15,11 +15,6 @@ income (доход). Последний атрибут должен быть з�
 
 
 class Worker:
-    name = ''
-    surname = ''
-    position = ''
-    _income = 0
-
     def __init__(self, name, surname, position='default', **kwargs):
         self.name = name
         self.surname = surname
@@ -29,10 +24,6 @@ class Worker:
 
 
 class Position(Worker):
-
-    def __init__(self, name, surname, position='default', **kwargs):
-        super().__init__(name, surname, position='default', **kwargs)
-
     def get_full_name(self):
         return self.name + ' ' + self.surname
 
